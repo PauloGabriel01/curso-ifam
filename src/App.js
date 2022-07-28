@@ -20,18 +20,6 @@ function App() {
       description:"Olá, tudo bom?",
       img:imagemGato,
       alt:"gato rebaixado"
-    },
-    {
-      title:"Olá Mundo",
-      description:"Olá, tudo bom?",
-      img:imagemGato,
-      alt:"gato rebaixado"
-    },
-    {
-      title:"Olá Mundo",
-      description:"Olá, tudo bom?",
-      img:imagemGato,
-      alt:"gato rebaixado"
     }
   ])
 

@@ -4,6 +4,9 @@ const TarefaContent = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  background-color: #2a4b65;
+  border-radius: 10px;
+  margin: 5px;  
 `
 
 const TarefaTitle = styled.h1`
@@ -28,4 +31,3 @@ export const ItemTarefa = ({title, description, img, alt}) => {
       </TarefaContent>
    )
 }
-
