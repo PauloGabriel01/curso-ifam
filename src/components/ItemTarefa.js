@@ -3,12 +3,11 @@ import styled from 'styled-components';
 const TarefaContent = styled.div`
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
   padding: 10px 20px;
 `
 
 const TarefaTitle = styled.h1`
-  border: 1px solid green;
+  font-family: Arial;
 `
 
 const TarefaImage = styled.img`
@@ -22,7 +21,7 @@ export const ItemTarefa = ({title, description, img, alt}) => {
    return (
     <TarefaContent>
         <div>
-          <h1 className="tarefa-title">{title}</h1>
+          <TarefaTitle className="tarefa-title">{title}</TarefaTitle>
           <p>{description}</p>
         </div>
         <TarefaImage src={img} alt={alt}/>
