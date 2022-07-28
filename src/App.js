@@ -1,17 +1,9 @@
 import './App.css';
-import styled, {createGlobalStyle} from 'styled-components';
+import styled from 'styled-components';
 import TodoListForm from './components/TodoListForm';
 import {ItemTarefa} from "./components/ItemTarefa"
 import imagemGato from './img/gatorebaixado.jpg'
 import { useState } from 'react';
-
-const GlobalStyle = createGlobalStyle`
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-`
 
 
 const Container = styled.div`
@@ -50,15 +42,12 @@ function App() {
 
 
   return (
-    <div>
-      <GlobalStyle/>
-      <Container>
-          {listaTarefas.map((tarefa, index) => (
-            <ItemTarefa key={index} {...tarefa} />
-          ))}
-        <TodoListForm handleSubmit={adicionarTarefa}/>
-      </Container>
-    </div>
+    <Container>
+      {listaTarefas.map((tarefa, index) => (
+        <ItemTarefa key={index} {...tarefa} />
+      ))}
+      <TodoListForm handleSubmit={adicionarTarefa}/>
+    </Container>
   );
 }
 
