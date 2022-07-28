@@ -15,12 +15,6 @@ const Container = styled.div`
 function App() {
 
   const [listaTarefas, setListaTarefas] = useState([
-    {
-      title:"Olá Mundo",
-      description:"Olá, tudo bom?",
-      img:imagemGato,
-      alt:"gato rebaixado"
-    }
   ])
 
   const adicionarTarefa = (novaTarefa) => {
