@@ -1,23 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import styled, {createGlobalStyle} from 'styled-components';
+import TodoListForm from './components/TodoListForm';
+import {ItemTarefa} from "./components/ItemTarefa"
+import imagemGato from './img/gatorebaixado.jpg'
+import { useState } from 'react';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+`
+
+
+const Container = styled.div`
+
+`
+
+
 
 function App() {
+
+  const [listaTarefas, setListaTarefas] = useState([
+    {
+      title:"Olá Mundo",
+      description:"Olá, tudo bom?",
+      img:imagemGato,
+      alt:"gato rebaixado"
+    },
+    {
+      title:"Olá Mundo",
+      description:"Olá, tudo bom?",
+      img:imagemGato,
+      alt:"gato rebaixado"
+    },
+    {
+      title:"Olá Mundo",
+      description:"Olá, tudo bom?",
+      img:imagemGato,
+      alt:"gato rebaixado"
+    }
+  ])
+
+  const adicionarTarefa = (novaTarefa) => {
+
+    setListaTarefas(prevState => [...prevState, novaTarefa])
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyle/>
+      <Container>
+          {listaTarefas.map((tarefa, index) => (
+            <ItemTarefa key={index} {...tarefa} />
+          ))}
+        <TodoListForm handleSubmit={adicionarTarefa}/>
+      </Container>
     </div>
   );
 }
